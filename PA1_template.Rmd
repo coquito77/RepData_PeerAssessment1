@@ -169,7 +169,6 @@ print(paste("Number of NAs in filled array: ",format(length(which(is.na(fill$ste
 sumfill = aggregate(fill$steps, list(fill$date), sum, na.rm=TRUE)
 colnames(sumfill) = c("date","steps")
 
-
 ggplot(sumfill, aes(sumfill$date,sumfill$steps)) + 
        geom_histogram(stat="identity")  + scale_x_date("Date", 
                labels = date_format("%b-%y"), 
@@ -178,7 +177,7 @@ ggplot(sumfill, aes(sumfill$date,sumfill$steps)) +
                      labels = comma) +xlab("Date") +
   theme_minimal() +
        theme(axis.text.x = element_text(size=10,angle=90,colour="black",vjust=1,hjust=1))+
-       theme(axis.text.y = element_text(size=10,angle=45,colour="black",vjust=1,hjust=1))+
+       theme(axis.text.y = element_text(size=10,angle=90,colour="black",vjust=1,hjust=1))+
        theme(axis.title  = element_text(size=15))
 
 ```
@@ -210,7 +209,6 @@ Use the "weekdays" R function to determine the weekday for each date.
 Then categorize as a weekend or weekday.
 
 ```{r, echo=TRUE}
-
 
 daytype <- function(date) {
   
